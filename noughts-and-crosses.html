@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+	</head>
+	<body>
+		<h1>Noughts and crosses</h1>
+		<div id="game" class="centred">
+			<div id="status" class="centred">
+				<ul>
+					<li>
+						<button data-bind="click: newGame" type="button">New Game</button>
+						<button data-bind="click: resetScore" type="button">Reset Score</button>
+					</li>
+					<li>
+						X: <span data-bind="text: scoreX"></span>, 
+						O: <span data-bind="text: scoreO"></span>
+					</li>
+					<li>
+						Current player: <span data-bind="text: activePlayer"></span>
+					</li>
+					<li data-bind="visible: winner">
+						Winner: <span data-bind="text: winner"></span>
+					</li>
+				</ul>
+			</div>
+
+			<table id="grid" class="centred">
+				<tbody data-bind="foreach: grid.rows()">
+					<tr data-bind="foreach: $data">
+						<td data-bind="text: mark, click: $root.markGrid"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div id="scripts">
+			<script src="knockout-2.0.0.debug.js"></script>
+			<script src="noughts-and-crosses.js"></script>
+		</div>
+	</body>
+</html>

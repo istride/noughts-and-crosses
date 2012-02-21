@@ -1,0 +1,41 @@
+body {
+	font-family:sans-serif;
+	width:600px;
+	margin:0 auto;
+	background-color:#FEFEFE;
+}
+
+.centred {
+	margin:0 auto;
+}
+
+h1 {
+	text-align:center;
+}
+
+#status {
+	width:300px;
+}
+
+#game {
+	background-color:#EEE;
+	padding:10px 0;
+}
+
+table {
+	cursor:pointer;
+	text-align:center;
+}
+
+td {
+	height:100px;
+	width:100px;
+}
+
+td:hover {
+	background-color:#ACF;
+}
+
+ul {
+	list-style:none;
+}
