@@ -124,7 +124,22 @@ function NoughtsAndCrossesViewModel() {
 		self.scoreO(0);
 	};
 
+	self.formatActivePlayer = ko.computed(function() {
+		if ( self.activePlayer() == NOUGHT )
+			return "Noughts";
+		else
+			return "Crosses";
+	});
+
+	
+	self.formatWinner = ko.computed(function() {
+		if ( self.winner() == NOUGHT )
+			return "Noughts";
+		else
+			return "Crosses";
+	});
 
 }
+
 var nac = new NoughtsAndCrossesViewModel();
 ko.applyBindings(nac);

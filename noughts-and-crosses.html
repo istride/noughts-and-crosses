@@ -13,14 +13,17 @@
 						<button data-bind="click: resetScore" type="button">Reset Score</button>
 					</li>
 					<li>
-						X: <span data-bind="text: scoreX"></span>, 
-						O: <span data-bind="text: scoreO"></span>
+						Noughts: <span data-bind="text: scoreO"></span>
 					</li>
 					<li>
-						Current player: <span data-bind="text: activePlayer"></span>
+						Crosses: <span data-bind="text: scoreX"></span> 
+					</li>
+
+					<li>
+						Current player: <span data-bind="text: formatActivePlayer"></span>
 					</li>
 					<li data-bind="visible: winner" class="alert">
-						<span data-bind="text: winner"></span> wins!
+						<span data-bind="text: formatWinner"></span> win!
 					</li>
 				</ul>
 			</div>
