@@ -6,7 +6,7 @@
 	<body>
 		<h1>Noughts and crosses</h1>
 		<div id="game" class="centred">
-			<div id="status" class="centred">
+			<div id="status">
 				<ul>
 					<li>
 						<button data-bind="click: newGame" type="button">New Game</button>
@@ -19,19 +19,21 @@
 					<li>
 						Current player: <span data-bind="text: activePlayer"></span>
 					</li>
-					<li data-bind="visible: winner">
-						Winner: <span data-bind="text: winner"></span>
+					<li data-bind="visible: winner" class="alert">
+						<span data-bind="text: winner"></span> wins!
 					</li>
 				</ul>
 			</div>
-
-			<table id="grid" class="centred">
-				<tbody data-bind="foreach: grid.rows()">
-					<tr data-bind="foreach: $data">
-						<td data-bind="text: mark, click: $root.markGrid"></td>
-					</tr>
-				</tbody>
-			</table>
+			
+			<div id="grid">
+				<table>
+					<tbody data-bind="foreach: grid.rows()"> 
+						<tr data-bind="foreach: $data">
+							<td data-bind="text: mark, click: $root.markGrid"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 		
 		<div id="scripts">
