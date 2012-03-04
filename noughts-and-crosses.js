@@ -124,19 +124,19 @@ function NoughtsAndCrossesViewModel() {
 		self.scoreO(0);
 	};
 
-	self.formatActivePlayer = ko.computed(function() {
-		if ( self.activePlayer() == NOUGHT )
+	self.formatPlayer = function(player) {
+		if ( player == NOUGHT )
 			return "Noughts";
 		else
 			return "Crosses";
+	};
+
+	self.formatActivePlayer = ko.computed(function() {
+		return self.formatPlayer(self.activePlayer());
 	});
 
-	
 	self.formatWinner = ko.computed(function() {
-		if ( self.winner() == NOUGHT )
-			return "Noughts";
-		else
-			return "Crosses";
+		return self.formatPlayer(self.winner());
 	});
 
 }
